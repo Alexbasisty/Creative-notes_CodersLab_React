@@ -11,7 +11,7 @@ const NavBar = () => {
       <div>
         {!isAuthenticated && loginWithRedirect()}
 
-        <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Creative Notes</a>
 

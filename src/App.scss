@@ -1,10 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  text-align: center;
-}
-.container {
-  margin: 0 auto;
-  width: 1200px;
+// own-app styles
+
+section {
+  &.hero.is-light.is-bold {
+    background-image: url("images/workshop-1746275_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+
+  }
 }

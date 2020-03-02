@@ -3,16 +3,20 @@ import React, { Component } from "react";
 class Banner extends Component {
 
   render() {
-
+    const { user } = this.props;
     return (
-        <div className="banner">
-          <h1 className="banner-title">
-            Plan your <span>life</span>
-          </h1>
-          <p className="banner-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptatum?
-          </p>
-        </div>
+        <section className="hero is-light is-bold is-large">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
+                Plan your life, {user}
+              </h1>
+              <h2 className="subtitle">
+                Large subtitle
+              </h2>
+            </div>
+          </div>
+        </section>
     );
   }
 }
