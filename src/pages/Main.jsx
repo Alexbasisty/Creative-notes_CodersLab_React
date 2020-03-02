@@ -1,17 +1,12 @@
-import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useAuth0 } from "../react-auth0-spa";
 
-class Main extends Component {
+const Main = () => {
+        const { user } = useAuth0();
 
-    render() {
         return (
-            <>
-                <h1>Wybierz stronę:</h1>
-                <div className="notification"><Link className="link" to="/countries">Search counries information</Link></div>
-                <div className="notification"><Link to="/notes">Notes</Link></div>
-            </>
+                <h1>Hello, {user.name}</h1>
         );
-    }
-}
+};
 
 export default Main;
