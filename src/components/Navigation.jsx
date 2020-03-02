@@ -5,10 +5,23 @@ class Navigation extends Component {
 
   render() {
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-          <div className="logo"><a href="http://localhost:3000/notes">Logo</a></div>
-          <div className="menu">Menu</div>
-        </nav>
+        <header className="page-header">
+          <div className="container">
+
+            <a href="/" className="page-logo">
+              Creative Notes
+            </a>
+
+            <nav className="page-nav">
+              <ul className="page-nav-list">
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/">Informacje</a></li>
+                <li><a href="/">O akcji</a></li>
+                <li><a href="/">Kontakt</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
     );
   }
 }

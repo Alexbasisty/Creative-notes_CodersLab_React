@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Navigation from "../components/Navigation";
+import Banner from "../components/Banner";
 
 class Hello extends Component {
 
   render() {
     return (
         <>
-          <Navigation />
-          <h1>Hello</h1>
           <Link to="/">Back to start</Link>
+          <Navigation />
+          <Banner />
         </>
     )
   }

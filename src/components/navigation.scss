@@ -1,7 +1,17 @@
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
+.page-header {
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+    }
+  }
+
   a {
     text-decoration: none;
   }
