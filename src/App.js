@@ -7,6 +7,7 @@ import Profile from "./components/Profile";
 import NavBar from "./components/NavBar";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
+import NotePart from "./components/NotePart";
 
 function App() {
     const { loading } = useAuth0();
@@ -24,6 +25,7 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Main} />
                     <PrivateRoute path="/profile" component={Profile} />
+                    <PrivateRoute path="/notepart" component={NotePart} />
                 </Switch>
             </Router>
         </div>
