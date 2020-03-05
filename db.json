@@ -1,9 +1,10 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "todo": [
+    { "title": "web-app", "message": "create an application with react.js" },
+    { "title": "CV", "message": "create a CV, and start looking for a job in FED" }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "done": [
+    { "title": "play FIFA", "message": "start playing FIFA on the highest level " }
   ],
   "profile": { "name": "typicode" }
 }

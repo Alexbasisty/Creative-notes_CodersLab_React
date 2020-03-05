@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ToDoInputs from "../components/ToDoInputs";
+import ToDoList from "../components/ToDoList";
+import DoneList from "../components/DoneList";
 
 class NotePart extends Component {
 
@@ -14,10 +16,12 @@ class NotePart extends Component {
               {/*to split inputs and lists*/}
             </div>
             <div className="column">
-              To Do
+              <h1>To Do</h1>
+              <ToDoList />
             </div>
             <div className="column">
               Done
+              <DoneList />
             </div>
           </div>
         </section>
