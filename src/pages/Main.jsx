@@ -3,11 +3,11 @@ import { useAuth0 } from "../react-auth0-spa";
 import Banner from "../components/Banner";
 
 const Main = () => {
-        const { user } = useAuth0();
+        const { user, isAuthenticated } = useAuth0();
 
         return (
             <>
-              <Banner user={user.name}/>
+              {isAuthenticated ? <Banner user={user.name}/> : <Banner />}
             </>
         );
 };

@@ -5,12 +5,10 @@ import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, logout, user } = useAuth0();
 
   return (
       <div>
-        {!isAuthenticated && loginWithRedirect()}
-
         <nav className="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Crazy Notes</a>
@@ -65,10 +63,10 @@ const NavBar = () => {
                   {isAuthenticated && <button className="button is-warning" onClick={() => logout()}>
                     <strong>Logout</strong>
                   </button>}
-                  <a><img src={user.picture} style={{
+                  {isAuthenticated && <a><img src={user.picture} style={{
                     maxHeight: '3rem',
                     borderRadius: '30%'
-                  }}/></a>
+                  }}/></a>}
                 </div>
               </div>
             </div>

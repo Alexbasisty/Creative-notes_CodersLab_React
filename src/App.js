@@ -7,7 +7,7 @@ import Profile from "./components/Profile";
 import NavBar from "./components/NavBar";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
-import NotePart from "./components/NotePart";
+import NotePart from "./pages/NotePart";
 
 function App() {
     const { loading } = useAuth0();
