@@ -4,6 +4,7 @@ import ToDoList from "../components/ToDoList";
 import DoneList from "../components/DoneList";
 
 class NotePart extends Component {
+
   deleteData = (id) => {
     const url = "http://localhost:3004/todo/";
     fetch(url + id, {

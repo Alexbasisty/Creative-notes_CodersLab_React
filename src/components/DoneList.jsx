@@ -26,6 +26,7 @@ class ShowMore extends Component {
       )
     }
     return (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" onClick={this.handleShowMore}>Pokaż więcej</a>
     )
   }
@@ -91,7 +92,7 @@ class DoneList extends Component {
                         <button
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}
-                            onClick={() => this.changeStatus(task.id, task.title, task.message)}>Return in progress</button>
+                            onClick={() => this.changeStatus(task.id, task.title, task.message)}>Back in progress</button>
 
                       </ShowMore>
 
