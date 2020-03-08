@@ -10,7 +10,10 @@ class ToDoInputs extends Component {
     e.preventDefault();
 
     const { title, message } = this.state;
-    const task = { ...this.state };
+    const task = {
+      ...this.state,
+      status: 'inprogress'
+    };
 
     if(title.length > 0 && message.length > 0) {
       fetch('http://localhost:3004/todo', {
@@ -57,11 +60,12 @@ class ToDoInputs extends Component {
                 <button className="button is-link" type="submit" onClick={this.handleSubmit}>Add</button>
               </div>
               <div className="control">
-                <button className="button is-link is-light" onClick={
-                  () => this.setState({
-                    title: '',
-                    message: ''
-                  })}>Cancel</button>
+                <button className="button is-link is-light" onClick={e => {
+                      e.preventDefault();
+                      this.setState({
+                        title: '',
+                        message: ''
+                  })}}>Cancel</button>
               </div>
             </div>
           </form>

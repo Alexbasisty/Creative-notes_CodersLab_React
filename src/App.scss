@@ -10,3 +10,11 @@ section {
 
   }
 }
+div.column {
+  div.tile.is-vertical {
+    box-shadow: 3px 7px 15px 0 rgba(0,0,0,0.75);
+    &:hover {
+      border: 1px solid grey;
+    }
+  }
+}

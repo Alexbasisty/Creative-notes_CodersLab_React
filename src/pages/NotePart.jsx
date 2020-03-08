@@ -16,11 +16,11 @@ class NotePart extends Component {
               {/*to split inputs and lists*/}
             </div>
             <div className="column">
-              <h1>To Do</h1>
+              <h1 className="title is-2 has-text-primary">Tasks in progress</h1>
               <ToDoList />
             </div>
             <div className="column">
-              Done
+              <h1 className="title is-2 has-text-warning">Done tasks</h1>
               <DoneList />
             </div>
           </div>

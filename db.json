@@ -1,10 +1,28 @@
 {
   "todo": [
-    { "title": "web-app", "message": "create an application with react.js" },
-    { "title": "CV", "message": "create a CV, and start looking for a job in FED" }
-  ],
-  "done": [
-    { "title": "play FIFA", "message": "start playing FIFA on the highest level " }
-  ],
-  "profile": { "name": "typicode" }
+    {
+      "title": "CV",
+      "message": "create a CV, and start looking for a job in FED",
+      "status": "inprogress",
+      "id": 2
+    },
+    {
+      "title": "New Task",
+      "message": "Play smth",
+      "status": "inprogress",
+      "id": 3
+    },
+    {
+      "title": "New Task",
+      "message": "Create smth",
+      "status": "inprogress",
+      "id": 4
+    },
+    {
+      "title": "New Task3",
+      "message": "DO smth",
+      "status": "done",
+      "id": 5
+    }
+  ]
 }
