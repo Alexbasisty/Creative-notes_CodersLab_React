@@ -1,9 +1,39 @@
 import React, { Component } from "react";
 
+class ShowMore extends Component {
+  state = {
+    showMore: false,
+  };
+  handleShowMore = (e) => {
+    e.preventDefault();
+    this.setState({
+      showMore: !this.state.showMore,
+    })
+  };
+  render() {
+    const {showMore} = this.state;
+    if (showMore) {
+      return (
+          <>
+            {this.props.children}
+            <button
+                className="button is-primary is-light"
+                style={{marginTop: '10px', marginLeft: '10px'}}
+                onClick={this.handleShowMore}>
+              Close
+            </button>
+          </>
+      )
+    }
+    return (
+        <a href="#" onClick={this.handleShowMore}>Pokaż więcej</a>
+    )
+  }
+}
+
 class DoneList extends Component {
   state = {
     done: [],
-    visible: false
   };
 
   componentDidMount() {
@@ -15,13 +45,6 @@ class DoneList extends Component {
           })
         })
   }
-
-  changeSize = (task) => {
-
-    this.setState({
-      visible: true
-    })
-  };
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
@@ -54,13 +77,11 @@ class DoneList extends Component {
                 key={task.id}
                 className="tile is-vertical"
                 style={{marginBottom: '15px'}}
-                onClick={() => this.changeSize(task)}
                 >
               <article className="tile is-child notification is-primary" style={{position: 'relative'}}>
                 <p className="title">{task.title}</p>
                 <div>
-                  {!this.state.visible ? '' : (
-                      <>
+                      <ShowMore>
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
@@ -71,8 +92,9 @@ class DoneList extends Component {
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}
                             onClick={() => this.changeStatus(task.id, task.title, task.message)}>Return in progress</button>
-                      </>
-                    )}
+
+                      </ShowMore>
+
                 </div>
               </article>
             </div>
@@ -81,4 +103,4 @@ class DoneList extends Component {
   }
 }
 
-export default DoneList;
+export default  DoneList

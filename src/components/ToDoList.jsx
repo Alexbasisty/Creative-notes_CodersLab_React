@@ -1,5 +1,36 @@
 import React, { Component } from "react";
 
+class ShowMore extends Component {
+  state = {
+    showMore: false,
+  };
+  handleShowMore = (e) => {
+    e.preventDefault();
+    this.setState({
+      showMore: !this.state.showMore,
+    })
+  };
+  render() {
+    const {showMore} = this.state;
+    if (showMore) {
+      return (
+          <>
+            {this.props.children}
+            <button
+                className="button is-primary is-light"
+                style={{marginTop: '10px', marginLeft: '10px'}}
+                onClick={this.handleShowMore}>
+              Close
+            </button>
+          </>
+      )
+    }
+    return (
+        <a href="#" onClick={this.handleShowMore}>Pokaż więcej</a>
+    )
+  }
+}
+
 class ToDoList extends Component {
   state = {
     toDo: [],
@@ -15,13 +46,6 @@ class ToDoList extends Component {
           })
         })
   }
-
-  changeSize = (task) => {
-
-    this.setState({
-      visible: true
-    })
-  };
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
@@ -54,14 +78,11 @@ class ToDoList extends Component {
                 key={task.id}
                 className="tile is-vertical"
                 style={{marginBottom: '15px'}}
-                onClick={() => this.changeSize(task)}
             >
               <article className="tile is-child notification is-warning" style={{position: 'relative'}}>
                 <p className="title">{task.title}</p>
                 <div>
-                  {!this.state.visible ? '' : (
-                      <>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+                      <ShowMore>
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
@@ -72,8 +93,7 @@ class ToDoList extends Component {
                             onClick={() => this.changeStatus(task.id, task.title, task.message)}
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}>Done!</button>
-                      </>
-                  )}
+                      </ShowMore>
                 </div>
               </article>
             </div>

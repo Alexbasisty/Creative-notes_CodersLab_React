@@ -13,9 +13,9 @@
       "id": 4
     },
     {
-      "title": "CV 01",
-      "message": "create a CV, and start looking for a job in FED",
-      "status": "inprogress",
+      "title": "New Task",
+      "message": "add smth",
+      "status": "done",
       "id": 5
     }
   ]
