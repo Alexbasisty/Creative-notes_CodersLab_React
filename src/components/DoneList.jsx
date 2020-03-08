@@ -23,23 +23,6 @@ class DoneList extends Component {
     })
   };
 
-  deleteData = (id) => {
-    const url = "http://localhost:3004/todo/";
-    fetch(url + id, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
-    })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Success: ', data);
-        })
-        .catch(error => {
-          console.log('Error: ', error);
-        })
-  };
-
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
     const status = {
@@ -78,10 +61,10 @@ class DoneList extends Component {
                 <div>
                   {!this.state.visible ? '' : (
                       <>
-                        <a
+                        <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.deleteData(task.id)}
+                            onClick={() => this.props.deleteTasks(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button

@@ -7,21 +7,15 @@
       "id": 2
     },
     {
-      "title": "New Task",
-      "message": "Play smth",
-      "status": "inprogress",
-      "id": 3
-    },
-    {
-      "title": "New Task",
-      "message": "Create smth",
-      "status": "inprogress",
+      "title": "New Task #99",
+      "message": "Should render now",
+      "status": "done",
       "id": 4
     },
     {
-      "title": "New Task3",
-      "message": "DO smth",
-      "status": "done",
+      "title": "CV 01",
+      "message": "create a CV, and start looking for a job in FED",
+      "status": "inprogress",
       "id": 5
     }
   ]

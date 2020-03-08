@@ -25,7 +25,10 @@ class ToDoInputs extends Component {
       })
           .then(resp => resp.json())
           .then(data => {
-            console.log('Success: ', data);
+            this.setState({
+              title: '',
+              message: ''
+            })
           })
           .catch(error => {
             console.log('Error: ', error);

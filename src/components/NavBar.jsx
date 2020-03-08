@@ -13,11 +13,11 @@ const NavBar = () => {
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Crazy Notes</a>
 
-            <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            <a href="/" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
                data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
             </a>
           </div>
 
@@ -35,22 +35,22 @@ const NavBar = () => {
               )}
 
               <div className="navbar-item has-dropdown is-hoverable">
-                <a className="navbar-link">
+                <a href="/" className="navbar-link">
                   More
                 </a>
 
                 <div className="navbar-dropdown">
-                  <a className="navbar-item">
+                  <a href="/" className="navbar-item">
                     About
                   </a>
-                  <a className="navbar-item">
+                  <a href="/" className="navbar-item">
                     Jobs
                   </a>
-                  <a className="navbar-item">
+                  <a href="/" className="navbar-item">
                     Contact
                   </a>
                   <hr className="navbar-divider" />
-                    <a className="navbar-item">
+                    <a href="/" className="navbar-item">
                       Report an issue
                     </a>
                 </div>
@@ -63,7 +63,7 @@ const NavBar = () => {
                   {isAuthenticated && <button className="button is-warning" onClick={() => logout()}>
                     <strong>Logout</strong>
                   </button>}
-                  {isAuthenticated && <a><img src={user.picture} style={{
+                  {isAuthenticated && <a href="/"><img src={user.picture} alt="avatar" style={{
                     maxHeight: '3rem',
                     borderRadius: '30%'
                   }}/></a>}

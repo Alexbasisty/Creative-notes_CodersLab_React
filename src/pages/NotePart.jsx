@@ -4,6 +4,22 @@ import ToDoList from "../components/ToDoList";
 import DoneList from "../components/DoneList";
 
 class NotePart extends Component {
+  deleteData = (id) => {
+    const url = "http://localhost:3004/todo/";
+    fetch(url + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success: ', data);
+        })
+        .catch(error => {
+          console.log('Error: ', error);
+        })
+  };
 
   render() {
     return (
@@ -17,11 +33,11 @@ class NotePart extends Component {
             </div>
             <div className="column">
               <h1 className="title is-2 has-text-primary">Tasks in progress</h1>
-              <ToDoList />
+              <ToDoList deleteTasks={this.deleteData} />
             </div>
             <div className="column">
               <h1 className="title is-2 has-text-warning">Done tasks</h1>
-              <DoneList />
+              <DoneList deleteTasks={this.deleteData} />
             </div>
           </div>
         </section>
