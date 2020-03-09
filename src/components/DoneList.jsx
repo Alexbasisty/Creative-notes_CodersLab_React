@@ -3,7 +3,7 @@ import ShowMore from "./ShowMore";
 
 class DoneList extends Component {
   state = {
-    done: [],
+    list: [],
   };
 
   componentDidMount() {
@@ -11,10 +11,37 @@ class DoneList extends Component {
         .then(resp => resp.json())
         .then(data => {
           this.setState({
-            done: data
+            list: data
           })
         })
   }
+
+  deleteData = (id) => {
+    const url = "http://localhost:3004/todo/";
+    const { list } = this.state;
+    let index = list.map(x => {
+      return x.id;
+    }).indexOf(id);
+
+    return fetch(url + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success: ', data);
+          list.splice(index, 1);
+          console.log(list);
+          this.setState({
+            list: list
+          })
+        })
+        .catch(error => {
+          console.log('Error: ', error);
+        })
+  };
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
@@ -40,9 +67,9 @@ class DoneList extends Component {
   };
 
   render() {
-    const { done } = this.state;
+    const { list } = this.state;
     return (
-        done.map(task => (
+        list.map(task => (
             <div
                 key={task.id}
                 className="tile is-vertical"
@@ -55,7 +82,7 @@ class DoneList extends Component {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.props.deleteTasks(task.id)}
+                            onClick={() => this.deleteData(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button

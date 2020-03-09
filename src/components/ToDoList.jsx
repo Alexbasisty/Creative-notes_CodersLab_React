@@ -3,15 +3,43 @@ import ShowMore from "./ShowMore";
 
 class ToDoList extends Component {
   state = {
-    toDo: [],
+    list: [],
   };
+
+  deleteData = (id) => {
+    const url = "http://localhost:3004/todo/";
+    const { list } = this.state;
+    let index = list.map(x => {
+      return x.id;
+    }).indexOf(id);
+
+    return fetch(url + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success: ', data);
+          list.splice(index, 1);
+          console.log(list);
+          this.setState({
+            list: list
+          })
+        })
+        .catch(error => {
+          console.log('Error: ', error);
+        })
+  };
+
 
   componentDidMount() {
     fetch(' http://localhost:3004/todo?status=inprogress')
         .then(resp => resp.json())
         .then(data => {
           this.setState({
-            toDo: data
+            list: data
           })
         })
   }
@@ -40,9 +68,9 @@ class ToDoList extends Component {
   };
 
   render() {
-    const { toDo } = this.state;
+    const { list } = this.state;
     return (
-        toDo.map(task => (
+        list.map(task => (
             <div
                 key={task.id}
                 className="tile is-vertical"
@@ -55,7 +83,7 @@ class ToDoList extends Component {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.props.deleteTasks(task.id)}
+                            onClick={() => this.deleteData(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button
