@@ -1,36 +1,5 @@
 import React, { Component } from "react";
-
-class ShowMore extends Component {
-  state = {
-    showMore: false,
-  };
-  handleShowMore = (e) => {
-    e.preventDefault();
-    this.setState({
-      showMore: !this.state.showMore,
-    })
-  };
-  render() {
-    const {showMore} = this.state;
-    if (showMore) {
-      return (
-          <>
-            {this.props.children}
-            <button
-                className="button is-primary is-light"
-                style={{marginTop: '10px', marginLeft: '10px'}}
-                onClick={this.handleShowMore}>
-              Close
-            </button>
-          </>
-      )
-    }
-    return (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a href="#" onClick={this.handleShowMore}>Pokaż więcej</a>
-    )
-  }
-}
+import ShowMore from "./ShowMore";
 
 class DoneList extends Component {
   state = {
@@ -99,7 +68,7 @@ class DoneList extends Component {
                 </div>
               </article>
             </div>
-            ))
+        ))
     );
   }
 }
