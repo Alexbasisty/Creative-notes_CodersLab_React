@@ -39,7 +39,7 @@
     {
       "title": "Test input",
       "message": "testing...",
-      "status": "done",
+      "status": "inprogress",
       "id": 10
     },
     {
@@ -51,7 +51,7 @@
     {
       "title": "New Task",
       "message": "new day, new thoughts",
-      "status": "inprogress",
+      "status": "done",
       "id": 12
     }
   ]

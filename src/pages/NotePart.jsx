@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ToDoInputs from "../components/ToDoInputs";
 import ToDoList from "../components/ToDoList";
 import DoneList from "../components/DoneList";
+import Footer from "../components/Footer";
 
 class NotePart extends Component {
 
@@ -41,6 +42,7 @@ class NotePart extends Component {
               <DoneList deleteTasks={this.deleteData} />
             </div>
           </div>
+          <Footer />
         </section>
     );
   }
