@@ -7,12 +7,6 @@
       "id": 2
     },
     {
-      "title": "New Task #03",
-      "message": "Would you render yourself?",
-      "status": "done",
-      "id": 6
-    },
-    {
       "title": "New Task #08",
       "message": "I co teraz?",
       "status": "done",
@@ -29,6 +23,24 @@
       "message": "new day, new thoughts",
       "status": "done",
       "id": 12
+    },
+    {
+      "title": "New Task",
+      "message": "session #11",
+      "status": "inprogress",
+      "id": 14
+    },
+    {
+      "title": "sfffd",
+      "message": "sdfsdfdf",
+      "status": "inprogress",
+      "id": 15
+    },
+    {
+      "title": "New Task",
+      "message": "ASdasddas",
+      "status": "done",
+      "id": 16
     }
   ]
 }

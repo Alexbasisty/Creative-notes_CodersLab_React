@@ -24,7 +24,8 @@ class ToDoInputs extends Component {
         body: JSON.stringify(task)
       })
           .then(resp => resp.json())
-          .then(data => {
+          .then(task => {
+            this.props.onCreateNewTask(task);
             this.setState({
               title: '',
               message: ''

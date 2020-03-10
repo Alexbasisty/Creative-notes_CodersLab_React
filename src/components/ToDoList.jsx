@@ -34,15 +34,7 @@ class ToDoList extends Component {
   };
 
 
-  componentDidMount() {
-    fetch(' http://localhost:3004/todo?status=inprogress')
-        .then(resp => resp.json())
-        .then(data => {
-          this.setState({
-            list: data
-          })
-        })
-  }
+
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
@@ -68,7 +60,7 @@ class ToDoList extends Component {
   };
 
   render() {
-    const { list } = this.state;
+    const { list } = this.props;
     return (
         list.map(task => (
             <div
