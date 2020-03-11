@@ -35,12 +35,6 @@
       "message": "sdfsdfdf",
       "status": "inprogress",
       "id": 15
-    },
-    {
-      "title": "New Task",
-      "message": "ASdasddas",
-      "status": "done",
-      "id": 16
     }
   ]
 }

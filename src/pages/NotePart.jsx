@@ -44,7 +44,7 @@ class NotePart extends Component {
             </div>
             <div className="column">
               <h1 className="title is-2 has-text-warning">Done tasks</h1>
-              <DoneList />
+              <DoneList onCreateNewTask={this.appendNewTask}/>
             </div>
           </div>
           <Footer />
