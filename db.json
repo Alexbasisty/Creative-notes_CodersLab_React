@@ -7,16 +7,22 @@
       "id": 2
     },
     {
-      "title": "New Task #08",
-      "message": "I co teraz?",
+      "title": "CV #01",
+      "message": "create a CV, and start looking for a job in FED",
+      "status": "inprogress",
+      "id": 3
+    },
+    {
+      "title": "New Task #05",
+      "message": "adas sasd a ",
       "status": "done",
-      "id": 7
+      "id": 4
     },
     {
       "title": "New Task",
-      "message": "session #11",
+      "message": "asd asd asd as d",
       "status": "inprogress",
-      "id": 14
+      "id": 5
     }
   ]
 }

@@ -102,8 +102,7 @@ class NotePart extends Component {
               <DoneList
                   onChangeStatus={this.changeStatus}
                   onDelete={this.deleteData}
-                  list={doneTasks}
-                  onCreateNewTask={this.appendNewTask}/>
+                  list={doneTasks} />
             </div>
           </div>
           <Footer />

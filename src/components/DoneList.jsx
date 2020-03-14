@@ -3,27 +3,6 @@ import ShowMore from "./ShowMore";
 
 class DoneList extends Component {
 
-
-
-  deleteData = (id) => {
-    const url = "http://localhost:3004/todo/";
-
-    return fetch(url + id, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
-    })
-        .then(response => response.json())
-        .then(data => {
-          this.refresh(id);
-        })
-        .catch(error => {
-          console.log('Error: ', error);
-        })
-  };
-
-
   render() {
     const { list } = this.props;
     return (
