@@ -11,9 +11,9 @@ const Banner = (props) => {
         <section className="hero is-light is-bold is-large" style={{height: '90vh'}}>
           <div className="hero-body">
             <div className="container">
-              {isAuthenticated && <h1 className="title">
+              {isAuthenticated && <div className="notification"><h1 className="title">
                 Start leaving your notes, {user}
-              </h1>}
+              </h1></div>}
               {!isAuthenticated && <div className="container">
                 <div className="notification">
                   <h2
