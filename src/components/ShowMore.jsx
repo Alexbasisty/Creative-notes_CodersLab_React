@@ -25,7 +25,7 @@ class ShowMore extends Component {
       )
     }
     return (
-        <a href="#" onClick={this.handleShowMore}>Show more...</a>
+        <button className="button is-warning is-light" onClick={this.handleShowMore}>Show details</button>
     )
   }
 }

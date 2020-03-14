@@ -14,7 +14,7 @@ const NavBar = () => {
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Crazy Notes</a>
 
-            <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            <div role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
             onClick={() => {
               if(isActive === '') {
                 setActive('is-active')
@@ -25,7 +25,7 @@ const NavBar = () => {
               <span aria-hidden="true" />
               <span aria-hidden="true" />
               <span aria-hidden="true" />
-            </a>
+            </div>
           </div>
 
           <div className={`navbar-menu ${isActive}`}>
@@ -42,9 +42,9 @@ const NavBar = () => {
               )}
 
               <div className="navbar-item has-dropdown is-hoverable">
-                <a href="/" className="navbar-link">
+                <span className="navbar-link">
                   More
-                </a>
+                </span>
 
                 <div className="navbar-dropdown">
                   <a href="https://github.com/Alexbasisty" className="navbar-item">

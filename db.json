@@ -9,13 +9,13 @@
     {
       "title": "CV #01",
       "message": "create a CV, and start looking for a job in FED",
-      "status": "inprogress",
+      "status": "done",
       "id": 3
     },
     {
       "title": "New Task #05",
       "message": "adas sasd a ",
-      "status": "done",
+      "status": "inprogress",
       "id": 4
     },
     {
