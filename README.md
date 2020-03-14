@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Aplikacja stworzona dla zapisywania własnej To Do listy. 
 
+### LogIn Part
+
+LogIn part maid with https://auth0.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
