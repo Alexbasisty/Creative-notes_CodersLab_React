@@ -69,7 +69,7 @@ class ToDoInputs extends Component {
                       this.setState({
                         title: '',
                         message: ''
-                  })}}>Cancel</button>
+                  })}}>Clear</button>
               </div>
             </div>
           </form>

@@ -5,7 +5,6 @@ class ShowMore extends Component {
     showMore: false,
   };
   handleShowMore = (e) => {
-    e.preventDefault();
     this.setState({
       showMore: !this.state.showMore,
     })
