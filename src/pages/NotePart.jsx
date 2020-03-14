@@ -18,6 +18,7 @@ class NotePart extends Component {
           })
         })
   };
+
   componentDidMount() {
     this.fetchData();
   }
