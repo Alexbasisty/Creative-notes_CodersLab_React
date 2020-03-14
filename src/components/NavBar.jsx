@@ -47,11 +47,11 @@ const NavBar = () => {
                 </span>
 
                 <div className="navbar-dropdown">
-                  <a href="https://github.com/Alexbasisty" className="navbar-item">
+                  <a href="https://github.com/Alexbasisty" target="_blank" rel="noopener noreferrer" className="navbar-item">
                     Contact
                   </a>
                   <hr className="navbar-divider" />
-                    <a href="https://github.com/Alexbasisty/Creative-notes_CodersLab_React" className="navbar-item">
+                    <a href="https://github.com/Alexbasisty/Creative-notes_CodersLab_React" target="_blank" rel="noopener noreferrer" className="navbar-item">
                       Report an issue
                     </a>
                 </div>

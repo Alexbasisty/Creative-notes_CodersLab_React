@@ -25,7 +25,7 @@ const Banner = (props) => {
                 paddingTop: '30px'
               }}>
                 {!isAuthenticated ? <button
-                        className="button is-success is-light"
+                        className="button is-danger is-light"
                         onClick={() => loginWithRedirect({})}
                     >Log in</button> :
                     <Link to="/notepart"><button className="button is-success is-light">Start to plan</button></Link>}
