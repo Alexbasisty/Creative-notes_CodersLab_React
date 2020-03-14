@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import history from "./utils/history";
 import PrivateRoute from "./components/PrivateRoute";
 import NotePart from "./pages/NotePart";
+import NotFound from "./pages/NotFound";
 
 function App() {
     const { loading } = useAuth0();
@@ -26,6 +27,7 @@ function App() {
                     <Route exact path="/" component={Main} />
                     <PrivateRoute path="/profile" component={Profile} />
                     <PrivateRoute path="/notepart" component={NotePart} />
+                    <Route component={NotFound} />
                 </Switch>
             </Router>
         </div>
