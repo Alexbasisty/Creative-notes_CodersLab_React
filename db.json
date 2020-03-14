@@ -35,6 +35,12 @@
       "message": "So perhaps, you've generated some fancy text, and you're content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps you're wondering how it's even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?\n\nWell, the answer is actually no - rather than generating fancy fonts, this converter creates fancy symbols. The explanation starts with unicode; an industry standard which creates the specification for thousands of different symbols and characters. All the characters that you see on your electronic devices, and printed in books, are likely specified by the unicode standard.",
       "status": "inprogress",
       "id": 7
+    },
+    {
+      "title": "Management of Weighing Data",
+      "message": "Analytical balances are at the heart of virtually all quantitative analysis in a lab. Accurate weighing and data integrity are essential in the preparation of analytical reference solutions, as well as in taking aliquots of samples for analysis and preparation of solutions, buffers, etc. Errors in this process can have profound impacts on data integrity and product quality.\n\nWhat can go wrong when weighing a sample and recording data manually?\n\nIn this reference paper, we will look at both manual transcription and three potential solutions for improving the accuracy and ease of data transfer and management, assessing the strengths and weaknesses of each.\n\nThree levels of improving data quality:\n\nAttach a printer to the balance, data output on a print-out\nConnect a computer, data transfer \"drop at cursor\" or to a communication software\nIntegrate into a network with automatic data transfer and centralized storage",
+      "status": "done",
+      "id": 8
     }
   ]
 }
