@@ -18,13 +18,13 @@ const DoneList = props => {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.props.onDelete(task.id)}
+                            onClick={() => props.onDelete(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}
-                            onClick={() => this.props.onChangeStatus(task.id, task.title, task.message, 'inprogress')}>Back in progress</button>
+                            onClick={() => props.onChangeStatus(task.id, 'inprogress')}>Back in progress</button>
                       </ShowMore>
                 </div>
               </article>

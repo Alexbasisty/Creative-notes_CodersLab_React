@@ -40,19 +40,18 @@ class NotePart extends Component {
         })
   };
 
-  changeStatus = (id, title, message, status) => {
+  changeStatus = (id, status) => {
     const url = "http://localhost:3004/todo/";
-    const task = {
-      title: title,
-      message: message,
-      status: status
-    };
-    fetch(url + id, {
+    const task = this.state.list.find((task) => task.id === id);
+    fetch(`${url}${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json; charset=UTF-8'
       },
-      body: JSON.stringify(task)
+      body: JSON.stringify({
+        ...task,
+        status,
+      })
     })
         .then(response => response.json())
         .then(() => {

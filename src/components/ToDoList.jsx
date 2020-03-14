@@ -18,11 +18,11 @@ const ToDoList = props => {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.props.onDelete(task.id)}
+                            onClick={() => props.onDelete(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button
-                            onClick={() => this.props.onChangeStatus(task.id, task.title, task.message, 'done')}
+                            onClick={() => props.onChangeStatus(task.id, 'done')}
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}>Done!</button>
                       </ShowMore>
