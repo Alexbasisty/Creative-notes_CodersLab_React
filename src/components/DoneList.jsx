@@ -23,29 +23,6 @@ class DoneList extends Component {
         })
   };
 
-  changeStatus = (id, title, message) => {
-    const url = "http://localhost:3004/todo/";
-    const status = {
-      title: title,
-      message: message,
-      status: 'inprogress'
-    };
-    fetch(url + id, {
-      method: 'PUT',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      },
-      body: JSON.stringify(status)
-    })
-        .then(response => response.json())
-        .then(task => {
-          this.props.onCreateNewTask(task);
-          this.refresh(id);
-        })
-        .catch(error => {
-          console.log('Error: ', error);
-        })
-  };
 
   render() {
     const { list } = this.props;
@@ -69,10 +46,8 @@ class DoneList extends Component {
                         <button
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}
-                            onClick={() => this.changeStatus(task.id, task.title, task.message)}>Back in progress</button>
-
+                            onClick={() => this.props.onChangeStatus(task.id, task.title, task.message, 'inprogress')}>Back in progress</button>
                       </ShowMore>
-
                 </div>
               </article>
             </div>

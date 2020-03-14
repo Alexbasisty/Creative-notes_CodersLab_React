@@ -41,6 +41,29 @@ class NotePart extends Component {
         })
   };
 
+  changeStatus = (id, title, message, status) => {
+    const url = "http://localhost:3004/todo/";
+    const task = {
+      title: title,
+      message: message,
+      status: status
+    };
+    fetch(url + id, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      },
+      body: JSON.stringify(task)
+    })
+        .then(response => response.json())
+        .then(() => {
+          this.fetchData();
+        })
+        .catch(error => {
+          console.log('Error: ', error);
+        })
+  };
+
   appendNewTask = (task) => {
     this.setState({
       list: [
@@ -70,12 +93,14 @@ class NotePart extends Component {
             <div className="column">
               <h1 className="title is-2 has-text-primary">Tasks in progress</h1>
               <ToDoList
+                  onChangeStatus={this.changeStatus}
                   onDelete={this.deleteData}
                   list={inProgressTasks} />
             </div>
             <div className="column">
               <h1 className="title is-2 has-text-warning">Done tasks</h1>
               <DoneList
+                  onChangeStatus={this.changeStatus}
                   onDelete={this.deleteData}
                   list={doneTasks}
                   onCreateNewTask={this.appendNewTask}/>

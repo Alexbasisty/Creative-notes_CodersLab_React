@@ -61,7 +61,7 @@ class ToDoList extends Component {
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button
-                            onClick={() => this.changeStatus(task.id, task.title, task.message)}
+                            onClick={() => this.props.onChangeStatus(task.id, task.title, task.message, 'done')}
                             className="button is-danger is-light"
                             style={{marginTop: '10px'}}>Done!</button>
                       </ShowMore>
