@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import ShowMore from "./ShowMore";
 
 class ToDoList extends Component {
-  state = {
-    list: [],
-  };
 
   // refresh = (id) => {
   //   const { list } = this.state;
@@ -18,24 +15,7 @@ class ToDoList extends Component {
   //   })
   // };
 
-  deleteData = (id) => {
-    const url = "http://localhost:3004/todo/";
 
-    return fetch(url + id, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
-    })
-        .then(response => response.json())
-        .then(data => {
-          // this.refresh(id);
-          console.log('Success: ', data);
-        })
-        .catch(error => {
-          console.log('Error: ', error);
-        })
-  };
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
@@ -77,7 +57,7 @@ class ToDoList extends Component {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.deleteData(task.id)}
+                            onClick={() => this.props.onDelete(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button

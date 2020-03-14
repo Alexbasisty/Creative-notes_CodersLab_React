@@ -2,31 +2,8 @@ import React, { Component } from "react";
 import ShowMore from "./ShowMore";
 
 class DoneList extends Component {
-  state = {
-    list: [],
-  };
 
-  componentDidMount() {
-    fetch('http://localhost:3004/todo?status=done')
-        .then(resp => resp.json())
-        .then(data => {
-          this.setState({
-            list: data
-          })
-        })
-  }
 
-  refresh = id => {
-    const { list } = this.state;
-    let index = list.map(task => {
-      return task.id;
-    }).indexOf(id);
-    list.splice(index, 1);
-
-    this.setState({
-      list: list
-    })
-  };
 
   deleteData = (id) => {
     const url = "http://localhost:3004/todo/";
@@ -71,7 +48,7 @@ class DoneList extends Component {
   };
 
   render() {
-    const { list } = this.state;
+    const { list } = this.props;
     return (
         list.map(task => (
             <div
@@ -86,7 +63,7 @@ class DoneList extends Component {
                         <button
                             className="delete is-medium"
                             style={{position: 'absolute', top: 0, right: 0}}
-                            onClick={() => this.deleteData(task.id)}
+                            onClick={() => this.props.onDelete(task.id)}
                         />
                         <p className="is-family-monospace">{task.message}</p>
                         <button
