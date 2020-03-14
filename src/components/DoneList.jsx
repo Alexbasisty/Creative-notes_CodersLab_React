@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import ShowMore from "./ShowMore";
 
-class DoneList extends Component {
+const DoneList = props => {
+    const { list } = props;
 
-  render() {
-    const { list } = this.props;
     return (
         list.map(task => (
             <div
@@ -32,7 +31,6 @@ class DoneList extends Component {
             </div>
         ))
     );
-  }
-}
+};
 
 export default  DoneList
