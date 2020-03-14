@@ -70,10 +70,10 @@ const NavBar = () => {
                   {isAuthenticated && <button className="button is-warning" onClick={() => logout()}>
                     <strong>Logout</strong>
                   </button>}
-                  {isAuthenticated && <a href="/"><img src={user.picture} alt="avatar" style={{
+                  {isAuthenticated && <Link to="/profile"><img src={user.picture} alt="avatar" style={{
                     maxHeight: '3rem',
                     borderRadius: '30%'
-                  }}/></a>}
+                  }}/></Link>}
                 </div>
               </div>
             </div>

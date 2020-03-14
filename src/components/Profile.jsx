@@ -11,13 +11,15 @@ const Profile = () => {
   }
 
   return (
-      <Fragment>
-        <img src={user.picture} alt="Profile" />
-
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <code>{JSON.stringify(user, null, 2)}</code>
-      </Fragment>
+  <Fragment>
+      <div className="card">
+        <img className="card-image" src={user.picture} alt="Profile" />
+        <div className="card-content">
+          <h2 className="title is-4">{user.name}</h2>
+          <p className="subtitle is-6">{user.email}</p>
+        </div>
+      </div>
+  </Fragment>
   );
 };
 
