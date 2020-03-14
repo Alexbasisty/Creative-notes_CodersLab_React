@@ -1,11 +1,12 @@
 // src/components/NavBar.js
 
-import React from "react";
+import React, {useState} from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const { isAuthenticated, logout, user } = useAuth0();
+  const [ isActive, setActive ] = useState('');
 
   return (
       <div>
@@ -13,15 +14,21 @@ const NavBar = () => {
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Crazy Notes</a>
 
-            <a href="#" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
-               data-target="navbarBasicExample">
+            <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            onClick={() => {
+              if(isActive === '') {
+                setActive('is-active')
+              }else {
+                setActive('');
+              }
+            }}>
               <span aria-hidden="true" />
               <span aria-hidden="true" />
               <span aria-hidden="true" />
             </a>
           </div>
 
-          <div id="navbarBasicExample" className="navbar-menu">
+          <div className={`navbar-menu ${isActive}`}>
             <div className="navbar-start">
                {isAuthenticated && (
    <div className="navbar-item">

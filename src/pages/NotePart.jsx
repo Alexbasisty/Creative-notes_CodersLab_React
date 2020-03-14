@@ -32,9 +32,8 @@ class NotePart extends Component {
       }
     })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
           this.fetchData();
-          console.log('Success: ', data);
         })
         .catch(error => {
           console.log('Error: ', error);
