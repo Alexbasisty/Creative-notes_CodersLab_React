@@ -47,17 +47,11 @@ const NavBar = () => {
                 </a>
 
                 <div className="navbar-dropdown">
-                  <a href="/" className="navbar-item">
-                    About
-                  </a>
-                  <a href="/" className="navbar-item">
-                    Jobs
-                  </a>
-                  <a href="/" className="navbar-item">
+                  <a href="https://github.com/Alexbasisty" className="navbar-item">
                     Contact
                   </a>
                   <hr className="navbar-divider" />
-                    <a href="/" className="navbar-item">
+                    <a href="https://github.com/Alexbasisty/Creative-notes_CodersLab_React" className="navbar-item">
                       Report an issue
                     </a>
                 </div>
