@@ -54,6 +54,7 @@ class ToDoList extends Component {
         .then(response => response.json())
         .then(data => {
           console.log('Success: ', data);
+          // this.refresh(id);
         })
         .catch(error => {
           console.log('Error: ', error);

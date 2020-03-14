@@ -14,20 +14,25 @@ const Banner = (props) => {
               {isAuthenticated && <h1 className="title">
                 Start leaving your notes, {user}
               </h1>}
-              {!isAuthenticated && <h2
-                  className="subtitle is-size-3-desktop has-text-danger"
-              >Here is a nice place, where You can create Your To Do list ;-)</h2>}
+              {!isAuthenticated && <div className="container">
+                <div className="notification">
+                  <h2
+                      className="subtitle is-size-3-desktop"
+                  >Here is a nice place, where You can create Your To Do list ;-)</h2>
+                </div>
+              </div>}
+              <div style={{
+                paddingTop: '30px'
+              }}>
+                {!isAuthenticated ? <button
+                        className="button is-success is-light"
+                        onClick={() => loginWithRedirect({})}
+                    >Log in</button> :
+                    <Link to="/notepart"><button className="button is-success is-light">Start to plan</button></Link>}
+              </div>
             </div>
           </div>
-          <div style={{
-            padding: '30px'
-          }}>
-            {!isAuthenticated ? <button
-                className="button is-success is-light"
-                onClick={() => loginWithRedirect({})}
-            >Log in</button> :
-                <Link to="/notepart"><button className="button is-success is-light">Start to plan</button></Link>}
-          </div>
+
         </section>
     );
 

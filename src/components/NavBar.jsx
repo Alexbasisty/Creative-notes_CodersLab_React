@@ -13,7 +13,7 @@ const NavBar = () => {
           <div className="navbar-brand">
             <a className="navbar-item has-text-black is-size-3 is-family-monospace" href="http://localhost:3000/">Crazy Notes</a>
 
-            <a href="/" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            <a href="#" role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
                data-target="navbarBasicExample">
               <span aria-hidden="true" />
               <span aria-hidden="true" />

@@ -40,7 +40,6 @@ class DoneList extends Component {
         .then(response => response.json())
         .then(data => {
           this.refresh(id);
-
         })
         .catch(error => {
           console.log('Error: ', error);
