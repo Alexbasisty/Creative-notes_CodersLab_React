@@ -26,7 +26,6 @@ class DoneList extends Component {
     this.setState({
       list: list
     })
-
   };
 
   deleteData = (id) => {

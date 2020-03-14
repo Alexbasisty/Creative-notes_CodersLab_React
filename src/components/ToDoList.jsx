@@ -6,6 +6,7 @@ class ToDoList extends Component {
     list: [],
   };
 
+
   deleteData = (id) => {
     const url = "http://localhost:3004/todo/";
     const { list } = this.state;
@@ -32,9 +33,6 @@ class ToDoList extends Component {
           console.log('Error: ', error);
         })
   };
-
-
-
 
   changeStatus = (id, title, message) => {
     const url = "http://localhost:3004/todo/";
