@@ -6,13 +6,20 @@ class ToDoList extends Component {
     list: [],
   };
 
+  // refresh = (id) => {
+  //   const { list } = this.state;
+  //   let index = list.map(x => {
+  //     return x.id;
+  //   }).indexOf(id);
+  //   list.splice(index, 1);
+  //   console.log(list);
+  //   this.setState({
+  //     list: list
+  //   })
+  // };
 
   deleteData = (id) => {
     const url = "http://localhost:3004/todo/";
-    const { list } = this.state;
-    let index = list.map(x => {
-      return x.id;
-    }).indexOf(id);
 
     return fetch(url + id, {
       method: 'DELETE',
@@ -22,12 +29,8 @@ class ToDoList extends Component {
     })
         .then(response => response.json())
         .then(data => {
+          // this.refresh(id);
           console.log('Success: ', data);
-          list.splice(index, 1);
-          console.log(list);
-          this.setState({
-            list: list
-          })
         })
         .catch(error => {
           console.log('Error: ', error);
