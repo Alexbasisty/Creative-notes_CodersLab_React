@@ -35,4 +35,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 ### Pamiętaj żeby zainstalować JSON globalnie
-`npm install -g json-server`
+`npm install -g json-server` 
+
+### `json-server --watch db.json --port 3004`
+odpalamy json server na porcie 3004

@@ -9,7 +9,7 @@
     {
       "title": "New Task #05",
       "message": "adas sasd a ",
-      "status": "inprogress",
+      "status": "done",
       "id": 4
     },
     {
@@ -33,7 +33,7 @@
     {
       "title": "New Task #99",
       "message": "something",
-      "status": "done",
+      "status": "inprogress",
       "id": 9
     }
   ]
